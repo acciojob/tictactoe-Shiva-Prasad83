@@ -51,8 +51,7 @@ boxes.forEach((box)=>{
 			playerInfo.innerText=`${localStorage.getItem("player2")}, you are up`
 		}else{
 			box.innerText="O";
-			playerTwoChoices.push(e.target.id);
-			e.target.style.backgroundColor="#800080";
+			playerTwoChoices.push(e.target.id);		
 			playerInfo.innerText=`${localStorage.getItem("player1")}, you are up`
 		} 
 		choosePlayer+=1;
@@ -85,10 +84,10 @@ boxes.forEach((box)=>{
 
 function isPlayerWon(playerChoices){
     console.log(playerChoices);
-	for(let i=0;i<WinningCombinations.length;i++){
+	for(let combo of WinningCombinations){
 		let isWinningCombo=true;
-		for(let j=0;j<WinningCombinations[i].length;j++){
-			if(!playerChoices.includes(WinningCombinations[i][j])){
+		for(let j=0;j<combo.length;j++){
+			if(!playerChoices.includes(combo[j])){
 				isWinningCombo=false;
 				break;
 			}
