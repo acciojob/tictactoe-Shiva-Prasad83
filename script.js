@@ -1,7 +1,7 @@
 //your JS code here. If required.
 const gameBoard=document.querySelector(".game-board");
 const form=document.querySelector(".form");
-const playerInfo=document.getElementById("player-info");
+const playerInfo=document.querySelector(".message");
 let isGameOver=false;
 const WinningCombinations=[
 	//Rows
@@ -59,7 +59,7 @@ boxes.forEach((box)=>{
 			
 		if(playerOneChoices.length>=3){
 			if(isPlayerWon(playerOneChoices)){
-				playerInfo.innerText=`${localStorage.getItem("player1")} Won`
+				playerInfo.innerText=`${localStorage.getItem("player1")} congratulations you won!`
 				isGameOver=true;
 				return;
 			}
@@ -67,7 +67,7 @@ boxes.forEach((box)=>{
 		}
 		if(playerTwoChoices.length>=3){
 			if(isPlayerWon(playerTwoChoices)){
-				playerInfo.innerText=`${localStorage.getItem("player2")} Won`
+				playerInfo.innerText=`${localStorage.getItem("player2")} congratulations you won!`
 				isGameOver=true;
 				return;
 			}
