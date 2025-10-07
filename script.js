@@ -36,7 +36,7 @@ form.addEventListener("submit",(e)=>{
 	localStorage.setItem("player2",e.target[1].value);
 	e.target.classList.add("hide");
 	gameBoard.classList.remove("hide");
-	playerInfo.innerText=`${localStorage.getItem("player1")}, you're up `;
+	playerInfo.innerText=`${localStorage.getItem("player2")}, you're up `;
 	e.target.reset();
 })
 const boxes=document.querySelectorAll(".grid-items");
@@ -48,11 +48,11 @@ boxes.forEach((box)=>{
 		if(choosePlayer%2==0){
 			box.innerText="x";
 			playerOneChoices.push(e.target.id);
-			playerInfo.innerText=`${localStorage.getItem("player2")}, you are up`
+			playerInfo.innerText=`${localStorage.getItem("player1")}, you are up`
 		}else{
 			box.innerText="o";
 			playerTwoChoices.push(e.target.id);		
-			playerInfo.innerText=`${localStorage.getItem("player1")}, you are up`
+			playerInfo.innerText=`${localStorage.getItem("player2")}, you are up`
 		} 
 		choosePlayer+=1;
 			
