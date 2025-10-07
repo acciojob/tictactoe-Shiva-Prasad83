@@ -46,11 +46,11 @@ boxes.forEach((box)=>{
 		if(e.target.innerText=="" && !isGameOver){
 			
 		if(choosePlayer%2==0){
-			box.innerText="X";
+			box.innerText="x";
 			playerOneChoices.push(e.target.id);
 			playerInfo.innerText=`${localStorage.getItem("player2")}, you are up`
 		}else{
-			box.innerText="O";
+			box.innerText="o";
 			playerTwoChoices.push(e.target.id);		
 			playerInfo.innerText=`${localStorage.getItem("player1")}, you are up`
 		} 
@@ -93,6 +93,9 @@ function isPlayerWon(playerChoices){
 			}
 		}
 		if(isWinningCombo){
+			for(let i=0;i<combo.length;i++){
+				document.getElementById(combo[i]).style.backgroundColor="#800080";
+			}
 			return isWinningCombo;
 		}
 	}
