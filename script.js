@@ -48,11 +48,11 @@ boxes.forEach((box)=>{
 		if(choosePlayer%2==0){
 			box.innerText="x";
 			playerOneChoices.push(e.target.id);
-			playerInfo.innerText=`${localStorage.getItem("player2")}, you are up`
+			playerInfo.innerText=`${localStorage.getItem("player2")}, you're up`
 		}else{
 			box.innerText="o";
 			playerTwoChoices.push(e.target.id);		
-			playerInfo.innerText=`${localStorage.getItem("player1")}, you are up`
+			playerInfo.innerText=`${localStorage.getItem("player1")}, you're up`
 		} 
 		choosePlayer+=1;
 			
